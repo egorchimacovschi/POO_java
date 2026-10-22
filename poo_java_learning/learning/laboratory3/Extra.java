@@ -1,0 +1,3 @@
+public enum TipProdus {
+    ALIMENTAR, ELECTRONIC, VESTIMENTAR, ALTUL
+}
