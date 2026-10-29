@@ -89,14 +89,14 @@ class  Patrat extends Dreptunghi{
 class Test {
     public static void main(String[] args) {
         Dreptunghi d = new Dreptunghi(5, 3);
-        System.out.println(d.ariaDreptunghi());   // 15
-        System.out.println(d.perimetru());        // 16
+        System.out.println(d.ariaDreptunghi());
+        System.out.println(d.perimetru());
 
         Patrat p = new Patrat(4);
-        System.out.println(p.ariaPatrat());       // 16.0
-        System.out.println(p.perimetru());        // 16
+        System.out.println(p.ariaPatrat());
+        System.out.println(p.perimetru());
 
         Romb r = new Romb(5, 30, 150);
-        System.out.println(r.ariaRomb());         // ≈ 12.5
+        System.out.println(r.ariaRomb());
     }
 }
