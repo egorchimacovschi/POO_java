@@ -32,6 +32,10 @@ class Patrulater {
         result = latura1 + latura2 + latura3 + latura4;
         return result;
     }
+
+    public double aria() {
+        return 0;
+    }
 }
 
 class Paralelogram extends Patrulater {
@@ -43,7 +47,8 @@ class Paralelogram extends Patrulater {
         super(latura1, latura2, latura1, latura2, unghi1, unghi2, unghi1, unghi2);
     }
 
-    public double ariaParalelogram(){
+    @Override
+    public double aria(){
         return latura1 * latura2 * sin(toRadians(unghi1));
     }
 }
@@ -57,7 +62,8 @@ class Romb extends Paralelogram{
         super(latura, latura, unghi1, unghi2);
     }
 
-    public double ariaRomb(){
+    @Override
+    public double aria(){
         double unghi = unghi1 > unghi2 ? unghi2 : unghi1;
         double d1 = 2 * latura1 * cos(toRadians(unghi / 2));
         double d2 = 2 * latura1 * sin(toRadians(unghi / 2));
@@ -71,7 +77,8 @@ class Dreptunghi extends Paralelogram{
         super(latura1, latura2, 90, 90);
     }
 
-    public double ariaDreptunghi(){
+    @Override
+    public double aria(){
         return latura1 * latura2;
     }
 }
@@ -81,7 +88,8 @@ class  Patrat extends Dreptunghi{
         super(latura, latura);
     }
 
-    public double ariaPatrat(){
+    @Override
+    public double aria(){
         return pow(latura1, 2);
     }
 }
@@ -89,14 +97,14 @@ class  Patrat extends Dreptunghi{
 class Test {
     public static void main(String[] args) {
         Dreptunghi d = new Dreptunghi(5, 3);
-        System.out.println(d.ariaDreptunghi());
+        System.out.println(d.aria());
         System.out.println(d.perimetru());
 
         Patrat p = new Patrat(4);
-        System.out.println(p.ariaPatrat());
+        System.out.println(p.aria());
         System.out.println(p.perimetru());
 
         Romb r = new Romb(5, 30, 150);
-        System.out.println(r.ariaRomb());
+        System.out.println(r.aria());
     }
 }
