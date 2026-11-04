@@ -6,11 +6,11 @@ class MyQueue{
     int lenght;
 
     public  MyQueue(){
-        this.array = new MyArray();
-        this.inf = 9500;
-        this.firstIndex = 0;
-        this.lastIndex = 0;
-        this.lenght = 0;
+        array = new MyArray();
+        inf = 9500;
+        firstIndex = 0;
+        lastIndex = 0;
+        lenght = 0;
     }
 
     public int getSize(){
@@ -18,9 +18,9 @@ class MyQueue{
     }
 
     void enqueue(int value){
-        this.array.set(lastIndex, value);
-        this.lenght += 1;
-        this.lastIndex++;
+        array.set(lastIndex, value);
+        lenght += 1;
+        lastIndex++;
     }
 
     int dequeue(){
@@ -29,8 +29,8 @@ class MyQueue{
         }
 
         int retValue = this.array.get(this.firstIndex);
-        this.firstIndex++;
-        this.lenght--;
+        firstIndex++;
+        lenght--;
 
         return  retValue;
     }
@@ -43,7 +43,7 @@ class MyQueue{
     public String toString(){
         String rezult = "";
         for(int i = 0; i < this.lenght; i++){
-            rezult += this.array.get(this.firstIndex + i) + " ";
+            rezult += array.get(this.firstIndex + i) + " ";
         }
         return rezult;
     }
@@ -54,7 +54,7 @@ class MyArray {
     private int size;
 
     public MyArray() {
-        this(100);
+        v = new int[100];
     }
 
     public MyArray(int length) {
