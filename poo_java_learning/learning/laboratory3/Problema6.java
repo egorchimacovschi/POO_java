@@ -5,28 +5,28 @@ class Graph {
 
     public Graph(int n) {
         this.n = n;
-        this.matrice = new int[n + 1][n + 1];
+        matrice = new int[n + 1][n + 1];
     }
 
     int getSize() {
-        return this.n;
+        return n;
     }
 
     void addArc(int v, int w, int cost) {
-        this.matrice[v][w] = cost;
+        matrice[v][w] = cost;
     }
 
     boolean isArc(int v, int w) {
-        return this.matrice[v][w] != 0;
+        return matrice[v][w] != 0;
     }
 
     @Override
     public String toString() {
         String result = "";
-        for (int i = 1; i <= this.n; i++) {
-            for (int j = 1; j <= this.n; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
                 if (isArc(i, j)) {
-                    result += this.matrice[i][j] + " ";
+                    result += matrice[i][j] + " ";
                 } else {
                     result += "- ";
                 }

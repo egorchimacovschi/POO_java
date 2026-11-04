@@ -5,12 +5,12 @@ class Punct{
     private int y;
 
     public Punct(){
-        this.x = 0;
-        this.y = 0;
+        x = 0;
+        y = 0;
     }
 
     int getX(){
-        return this.x;
+        return x;
     }
 
     void setX(int x){
@@ -18,7 +18,7 @@ class Punct{
     }
 
     int getY(){
-        return this.y;
+        return y;
     }
 
     void setY(int y){

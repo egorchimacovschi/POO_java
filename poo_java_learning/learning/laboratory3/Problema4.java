@@ -2,11 +2,11 @@ class Numar {
     int num;
 
     public Numar() {
-        this.num = 0;
+        num = 0;
     }
 
     public int suma(int a) {
-        return this.num + a;
+        return num + a;
     }
 
     public int suma(int a, int b) {
