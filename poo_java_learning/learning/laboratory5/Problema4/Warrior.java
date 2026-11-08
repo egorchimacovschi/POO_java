@@ -1,22 +1,67 @@
-package com.POOCC.lab05;
-
-/**
- * 
- */
-public class Warrior {
-    public static final int SNAKE_Warrior = 0;
-    public static final int OGRE_Warrior = 1;
-    public static final int MARSHMALLOW_MAN_Warrior = 2;
-
-    //Stores one of the three above types
-    public int type;
+public abstract class Warrior {
     //0 = dead, 100 = full strength
-    public int health;
-    public String name;
+    protected int health;
+    protected String name;
 
-    public Warrior (int type, int health, String name) {
-        this.type = type;
+    public abstract int getDamage();
+
+    public Warrior (int health, String name) {
         this.health = health;
         this.name = name;
     }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString(){
+        return "This is the  " + getClass().getSimpleName()
+                + ": name: " + name + " " + ", health: " + health
+                + ", damage:" + getDamage();
+    }
 }
+
+class Snake extends Warrior{
+    private int damage = 10;
+
+    public Snake(int health, String name){
+        super(health, name);
+    }
+
+    @Override
+    public int getDamage(){
+        return damage;
+    }
+}
+
+class Ogre extends Warrior{
+    private int damage = 6;
+
+    public Ogre(int health, String name){
+        super(health, name);
+    }
+
+    @Override
+    public int getDamage(){
+        return damage;
+    }
+}
+
+class MarshmallowMan extends Warrior{
+    private int damage = 1;
+
+    public MarshmallowMan(int health, String name){
+        super(health, name);
+    }
+
+    @Override
+    public int getDamage(){
+        return damage;
+    }
+}
+

@@ -1,39 +1,36 @@
-package com.POOCC.lab05;
-
-/**
- * 
- */
 import java.util.*;
 
 public class WarriorPack {
-    private Vector warriors ;
+    private Vector<Warrior> warriors ;
 
     public WarriorPack () {
-        warriors = new Vector();
+        warriors = new Vector<Warrior>();
     }
 
     public void addWarrior(Warrior newWarrior) {
         warriors.add(newWarrior);
     }
 
-    public Vector getWarriors() {
+    public Vector<Warrior> getWarriors() {
         return warriors ;
     }
 
     public int calculateDamage() {
         int damage = 0;
-        for (int i = 0; i < warriors.length; i++) {
-            if (warriors.get(i).type == Warrior.SNAKE_Warrior) {
-                //Snake does 10 damage
-                damage += 10;
-            } else if (warriors.get(i).type == Warrior.OGRE_Warrior) {
-                //Ogre does 6 damage
-                damage += 6;
-            } else if (warriors.get(i).type == Warrior.MARSHMALLOW_MAN_Warrior) {
-                //Marshmallow Man does 1 damage
-                damage += 1;
-            }
+        for (int i = 0; i < warriors.size(); i++) {
+            damage += warriors.get(i).getDamage();
         }
         return damage;
+    }
+
+    @Override
+    public String toString(){
+        String result = "";
+
+        for (Warrior warrior : warriors){
+            result += warrior.toString() + "\n";
+        }
+
+        return result;
     }
 }

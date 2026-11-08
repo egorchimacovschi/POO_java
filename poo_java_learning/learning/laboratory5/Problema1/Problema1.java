@@ -1,12 +1,6 @@
-
-
-/**
- *
- * @author Nan Mihai
- */
 class Animal {
-    static String nume;
-    static String culoare;
+    private static String nume;
+    private static String culoare;
     
     static {
         System.out.println("Bloc 1 - Animal");
@@ -24,7 +18,7 @@ class Animal {
 }
 
 class Caine extends Animal {
-    static String tipRasa;
+    private static String tipRasa;
     
     static {
         tipRasa = "medie";
@@ -47,7 +41,7 @@ class Caine extends Animal {
 }
 
 class SharPei extends Caine {
-    static int varsta;
+    private static int varsta;
     static String taraProvenienta;
     
     {

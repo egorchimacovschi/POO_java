@@ -74,7 +74,7 @@ public class MyList {
         return result;
     }
 
-    
+
     private class Node {
         private Node next;
         private Object data;
