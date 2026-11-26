@@ -70,6 +70,19 @@ public class Magazin {
         produse.put(cod, new Produs(name, pret, stoc));
     }
 
+    /**
+     * Applies a 15% discount to every product with stock below 50.
+     * <p>
+     * The discount is computed from the old price, so calling this
+     * method twice does not discount a product twice.
+     *
+     * @param cod  the product code, must not be null or blank
+     * @param stoc the stock, must be {@code >= 0}
+     * @return the product that was added
+     * @throws IllegalArgumentException if the code already exists
+     * @see Produs
+     * @since 1.0
+     */
     public void aplicaReduceriStocMic() {
         for (Produs produs : produse.values()) {
             if (produs.stoc < 50) {
