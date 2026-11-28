@@ -1,1 +1,1 @@
-# POO_java
+Initiated the README.
